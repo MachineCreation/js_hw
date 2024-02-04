@@ -53,18 +53,19 @@ age by 3 years. Use an arrow function for both methods
 // Create another arrow function for the addAge method that takes a single parameter
 // Adding to the age 
 
-class Person{
-    constructor(name, age) {
+ function Person(name, age) {
         this.name = name;
         this.age = age;
 
+
+    this.printInfo = () => {
+        return`Name: ${this.name} \nAge: ${this.age}`;
+        
     }
-    printInfo(){
-        return `Name: ${this.name} \nAge: ${this.age}`
-    }
-    gettingOlder(){
-        this.age += 1
-        return`${this.name} is now ${this.age}`
+
+    this.addYear = () => {
+        this.age += 1;
+        return`${this.name} is now ${this.age}`;
     }
 }
 let Joe = new Person('Joe',38)
@@ -73,9 +74,9 @@ let Eric = new Person('Eric',33)
 console.log(Joe.printInfo())
 console.log(Eric.printInfo())
 
-console.log(Joe.gettingOlder())
-console.log(Joe.gettingOlder())
-console.log(Joe.gettingOlder())
+console.log(Joe.addYear())
+console.log(Joe.addYear())
+console.log(Joe.addYear())
 
 
 
